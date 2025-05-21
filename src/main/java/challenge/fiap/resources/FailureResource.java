@@ -52,7 +52,6 @@ public class FailureResource {
                     .status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity(new ExceptionDto(e.toString(),
                             e.getMessage()))
-                    .type(MediaType.APPLICATION_JSON)
                     .build();
         }
     }
