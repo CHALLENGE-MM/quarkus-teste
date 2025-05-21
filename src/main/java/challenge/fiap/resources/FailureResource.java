@@ -44,13 +44,15 @@ public class FailureResource {
                             pageSize,
                             failures.size(),
                             failuresPaginated)
-            ).build();
+            )
+            .build();
 
         } catch (RuntimeException e) {
             return Response
                     .status(Response.Status.INTERNAL_SERVER_ERROR)
                     .entity(new ExceptionDto(e.toString(),
                             e.getMessage()))
+                    .type(MediaType.APPLICATION_JSON)
                     .build();
         }
     }
